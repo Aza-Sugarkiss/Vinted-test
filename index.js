@@ -13,7 +13,7 @@ const cloudinary = require("cloudinary").v2;
 const app = express();
 app.use(cors());
 app.use(formidable());
-mongoose.connect("mongodb://localhost/vinted");
+mongoose.connect(process.env.MONGODB_URI);
 
 cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
